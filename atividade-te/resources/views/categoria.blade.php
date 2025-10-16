@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="{{ route('categoria') }}">
+    <form method="POST" action="/categoria">
         @csrf
         <label for="fname">First name:</label><br>
         <input type="text" id="fname" name="fname" value="John"><br>

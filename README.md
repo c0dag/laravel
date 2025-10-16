@@ -10,11 +10,25 @@ npm install && npm run build
 composer run dev
 
 # Comandos
+- Controller Creation
 php artisan make:controller ProdutoController
 php artisan make:controller CategoriaController
 
+- Model Creation
+php artisan make:model Produto -m
+php artisan make:model Categoria -m
+
+# Creating database
+touch database/database.sqlite
+php artisan key:generate
+
+
 # Env
 Change app url to github codespaces link
+Ex: APP_URL=https://redesigned-space-dollop-xxxxxxxx-8000.app.github.dev/
+php artisan config:cache
+DB_CONNECTION=sqlite
+DB_DATABASE=/workspaces/laravel/database/database.sqlite
 
 # Instruções atividade
 APS 3 – Laravel
