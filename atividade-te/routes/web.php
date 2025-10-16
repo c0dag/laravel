@@ -9,6 +9,6 @@ Route::get('/', function () {
 });
 
 Route::get('/categoria', [CategoriaController::class, 'index']);
-Route::post('/categoria', [CategoriaController::class, 'index']);
+Route::post('/categoria', [CategoriaController::class, 'formulario'])->name('categoria');
 Route::get('/produto', [ProdutoController::class, 'index']);
 Route::post('/produto', [ProdutoController::class, 'index']);

@@ -13,6 +13,9 @@ composer run dev
 php artisan make:controller ProdutoController
 php artisan make:controller CategoriaController
 
+# Env
+Change app url to github codespaces link
+
 # Instruções atividade
 APS 3 – Laravel
 Estruturação básica de models, views e controllers usando rotas
