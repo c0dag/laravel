@@ -8,7 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/produto', [ProdutoController::class, 'index'])->name('produtos.index');
+Route::get('/produto/criar', [ProdutoController::class, 'criar'])->name('produtos.criar');
+Route::post('/produto', [ProdutoController::class, 'salvar'])->name('produtos.salvar');
+
 Route::get('/categoria', [CategoriaController::class, 'index']);
 Route::post('/categoria', [CategoriaController::class, 'formulario'])->name('categoria');
-Route::get('/produto', [ProdutoController::class, 'index']);
-Route::post('/produto', [ProdutoController::class, 'index']);

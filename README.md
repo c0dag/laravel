@@ -18,6 +18,11 @@ php artisan make:controller CategoriaController
 php artisan make:model Produto -m
 php artisan make:model Categoria -m
 
+- Migrations
+touch database/database.sqlite
+php artisan migrate
+
+
 # Creating database
 touch database/database.sqlite
 php artisan key:generate

@@ -3,16 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use App\Models\Categoria;
 
-class Categoria extends Model
+class Produto extends Model
 {
-    use HasFactory;
+    protected $table = 'produtos';
+    protected $fillable = [
+        'nome',
+        'preco',
+        'descricao',
+        'categoria_id',
+    ];
 
-    protected $fillable = ['nome'];
+    protected $casts = [
+        'preco' => 'decimal:2',
+    ];
 
-    public function produtos()
+    public function categoria(): BelongsTo
     {
-        return $this->hasMany(Produto::class);
+        return $this->belongsTo(Categoria::class);
     }
 }
