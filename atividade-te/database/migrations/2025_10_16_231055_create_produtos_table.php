@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->decimal('preco', 8, 2)->default(0);
             $table->text('descricao')->nullable();
+            $table->string('imagem')->nullable();
             $table->foreignId('categoria_id')->nullable()->constrained('categorias')->nullOnDelete();
             $table->timestamps();
         });

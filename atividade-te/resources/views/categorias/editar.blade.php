@@ -3,25 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Categoria</title>
+    <title>Editar Categoria</title>
 </head>
 <body>
     <div style="display: flex; align-items: center; gap: 10px;">
-        <h1>Cadastrar Categoria</h1>
+        <h1>Editar Categoria</h1>
         <a href="/categorias">Ver Categorias</a>
         <a href="/produtos">Ver Produtos</a>
-        <a href="/produtos/criar">Cadastrar Produto</a>
         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
             @csrf
             <button type="submit">Sair</button>
         </form>
     </div>
-
-    @if (session('success'))
-        <div>
-            {{ session('success') }}
-        </div>
-    @endif
 
     @if ($errors->any())
         <div>
@@ -33,16 +26,15 @@
         </div>
     @endif
 
-    <h2>Cadastrar Nova Categoria</h2>
-    <form action="{{ route('categorias.store') }}" method="POST">
+    <form action="{{ route('categorias.update', $categoria->id) }}" method="POST">
         @csrf
+        @method('PUT')
         <div>
-            <label for="nome">Nome da Categoria:</label>
-            <input type="text" id="nome" name="nome" value="{{ old('nome') }}" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="{{ old('nome', $categoria->nome) }}" required>
         </div>
 
-        <button type="submit">Cadastrar Categoria</button>
+        <button type="submit">Atualizar Categoria</button>
     </form>
 </body>
 </html>
-
